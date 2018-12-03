@@ -11,7 +11,7 @@ export class RecipeListComponent {
 
   current_classes: any;
 
-current_styles: any;
+  current_styles: any;
 
   recipes: Recipe[];
 
@@ -20,7 +20,7 @@ current_styles: any;
   constructor() {
 
     this.current_classes = { 'darkbg': false };
-    this.current_styles = { 'font-size' : '150%' };
+    this.current_styles = { 'font-size': '150%' };
 
     this.recipe_in_progress = Recipe.createBlank();
 

@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router'
+
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeSummaryComponent } from './components/recipe-summary/recipe-summary.component';
@@ -15,8 +16,18 @@ import { RecipeSummaryComponent } from './components/recipe-summary/recipe-summa
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {
+        path: 'recipes',
+        component: RecipeListComponent
+      },
+      {
+        path: '',
+        redirectTo: '/recipes',
+        pathMatch: 'full'
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
